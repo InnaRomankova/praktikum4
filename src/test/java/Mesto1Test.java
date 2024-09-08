@@ -9,7 +9,7 @@ import static io.restassured.RestAssured.given;
 
 public class Mesto1Test {
 
-    String bearerToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmNhMmJiYmQ1NmMxNDAwM2Q0Nzk3ZWMiLCJpYXQiOjE3MjUyMDUzODMsImV4cCI6MTcyNTgxMDE4M30.-n4uep4IdPgxhqJiZLZJzuKNdR1GuAUmk0JfpgNPeyg";
+    String bearerToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmNhMmJiYmQ1NmMxNDAwM2Q0Nzk3ZWMiLCJpYXQiOjE3MjU4MTk4OTIsImV4cCI6MTcyNjQyNDY5Mn0.k4a7tHvCJ0lHyDrnCSgO6j3sr0Bz9EumJGEqRu5XHgo";
 
     @Before
     public void setUp() {
@@ -19,7 +19,7 @@ public class Mesto1Test {
     @Test
     @DisplayName("Add a new photo")
     @Description("This test is for adding a new photo to Mesto.")
-    public void addNewPhoto() {
+    public void testAddNewPhoto() {
         given()
                 .header("Content-type", "application/json")
                 .auth().oauth2(bearerToken)
@@ -31,7 +31,7 @@ public class Mesto1Test {
     @Test
     @DisplayName("Like the first photo")
     @Description("This test is for liking the first photo on Mesto.")
-    public void likeTheFirstPhoto() {
+    public void testLikeTheFirstPhoto() {
         String photoID = getTheFirstPhotoID();
 
         likePhotoById(photoID);
